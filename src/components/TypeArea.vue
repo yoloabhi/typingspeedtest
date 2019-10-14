@@ -2,7 +2,7 @@
   <div class="hello">
     <v-layout justify-center>
       <h1>Speed Test</h1>
-      {{this.myResolvedValue}}
+<!--      {{this.myResolvedValue}}-->
     </v-layout>
     <v-container fluid grid-list-md>
       <v-layout row wrap>
@@ -130,7 +130,7 @@ export default {
         this.timerstarted = true
         this.setTimer()
       }
-      if (event.key === ' ') {
+      if (event.key === ' ' && this.currentword.length !== 0) {
         var d = this.wordlist.shift()
         this.wordcheck(d)
       }
@@ -155,17 +155,20 @@ export default {
       }
     },
     setTimer: function () {
-      console.log(this.timer)
-      var d = this.timer
+      // console.log(timer)
+      var d = this
       var e = function () {
         // console.log(this.timer)
         console.log('BVBV')
-        console.log(d)
+        console.log(d.timer)
+        console.log(d--)
       }
       setInterval(function () {
         // var x = setInterval(function (event) {
         // var d = this.timer
-        console.log(e())
+        // console.log(e())
+        console.log(d.timer)
+        console.log(d--)
       }, 1000)
     },
     setTimer2: function () {
